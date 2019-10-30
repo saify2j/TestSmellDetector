@@ -1,0 +1,33 @@
+.iButton {
+    -fx-padding: 8 10 10 10;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 5;
+    -fx-background-color: greenyellow;
+    -fx-font-size: 1.1em;
+    -fx-pref-width: 150px;
+    -fx-font-family: "Raleway";
+}
+.iButton:hover{
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.95) , 4,0,0,1 );
+
+}
+.iButton:pressed{
+    -fx-background-color: limegreen;
+}
+.textField{
+    -fx-padding: 8 10 10 10;
+    -fx-background-radius: 5;
+}
+.i2Button{
+    -fx-padding: 8 10 10 10;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 5;
+    -fx-background-color: oldlace;
+    -fx-font-size: 1.29em;
+    -fx-pref-width: 150px;
+}
+.label2{
+    -fx-padding: 8 10 10 10;
+    -fx-font-size: 1.3em;
+    -fx-text-fill: greenyellow;
+}

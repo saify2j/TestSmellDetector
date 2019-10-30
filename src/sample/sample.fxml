@@ -1,0 +1,35 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import java.net.URL?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<GridPane style="-fx-background-color: darkslateblue;" fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="2"
+           style="-fx-text-fill: aqua;
+                  -fx-font-size: 1.9em;
+                  -fx-text-alignment: center;
+            ">
+        Detect Smell: Resource Optimism
+    </Label>
+<!--    <TextField fx:id="department" GridPane.rowIndex="1" GridPane.columnIndex="2" ></TextField>-->
+<!--    <Label fx:id="warningDepartment" GridPane.rowIndex="2" GridPane.columnIndex="2" style="-fx-font-size: 1.1em;-fx-text-fill: red" ></Label>-->
+
+    <Label GridPane.rowIndex="2" GridPane.columnIndex="1" style="-fx-font-size: 1.2em;-fx-text-fill: white" >Choose Project Folder</Label>
+    <Button GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="iButton" onAction="#openFileChooser" >Select...</Button>
+    <TextField editable="false" styleClass="textField" fx:id="folderLoc" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="300"></TextField>
+
+
+    <Button GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="i2Button" onAction="#testSmell" >Test</Button>
+    <Label fx:id="detected" GridPane.columnIndex="2" GridPane.rowIndex="4" styleClass="label2"></Label>
+
+    <stylesheets>
+        <URL value="@../demo.css" />
+    </stylesheets>
+</GridPane>
