@@ -26,9 +26,9 @@
     <TextField editable="false" styleClass="textField" fx:id="folderLoc" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="400"></TextField>
 
 
-    <Button GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="i2Button" onAction="#testSmell" >Test</Button>
+    <Button fx:id="testButton" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="i2Button" onAction="#testSmell" >Test</Button>
     <Label fx:id="detected" GridPane.columnIndex="2" GridPane.rowIndex="4" styleClass="label2"></Label>
-    <TextArea fx:id="result" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="2" prefWidth="400"></TextArea>
+    <TextArea fx:id="result" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="2" prefWidth="400" visible="false"></TextArea>
     <stylesheets>
         <URL value="@../demo.css" />
     </stylesheets>

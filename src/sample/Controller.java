@@ -9,9 +9,12 @@ import detector.StatementsLine;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -29,7 +32,7 @@ public class Controller {
     private TextField folderLoc;
     @FXML
     private Label detected;
-    private String folderName;
+    private String folderName = "";
 
     public void openFileChooser(ActionEvent actionEvent) {
 
@@ -46,28 +49,47 @@ public class Controller {
 
     @FXML
     private TextArea result;
+    @FXML
+    private Button testButton;
 
     public void testSmell(ActionEvent actionEvent) {
+        int smell = 0;
+        if (folderName.equals("")) {
 
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Project Not Selected");
+
+            // Header Text: null
+            alert.setHeaderText(null);
+            alert.setContentText("Please select a project folder!");
+
+            alert.showAndWait();
+            detected.setText("");
+        } else {
 //        detected.setText(folderName);
-        StatementsLine sl = new StatementsLine();
-        ArrayList<Result> results = new ArrayList<>();
-        results = sl.statementsByLine(new File(folderName));
-        //System.out.println(results);
-        StringBuilder fieldContent = new StringBuilder("");
+            StatementsLine sl = new StatementsLine();
+            ArrayList<Result> results = new ArrayList<>();
+            results = sl.statementsByLine(new File(folderName));
+            //System.out.println(results);
+            StringBuilder fieldContent = new StringBuilder("");
 
 
+            for (Result s : results) {
+                //System.out.println(s.getSmellpath());
+                File f = new File(s.getSmellpath());
+                boolean exists = f.exists();
+                if (exists) {
+                    fieldContent.append(s.toString() + " FILE EXISTS" + "\n");
 
-        for (Result s : results) {
-            System.out.println(s.getSmellpath());
-            File f = new File(s.getSmellpath());
-            boolean exists = f.exists();
-            if (exists) {
-                fieldContent.append(s.toString() +" FILE EXISTS"+ "\n");
-
+                } else {
+                    fieldContent.append(s.toString() + " FILE DOES NOT EXIST" + "\n");
+                    smell++;
+                }
             }
-            else fieldContent.append(s.toString() +" FILE DOES NOT EXIST"+ "\n");
+            result.setText(fieldContent.toString());
+            detected.setText("Results Found!"+ "    Smell Count: "+smell);
+            detected.setTextFill(Paint.valueOf("greenyellow"));
+            result.setVisible(true);
         }
-        result.setText(fieldContent.toString());
     }
 }

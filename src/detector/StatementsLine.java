@@ -32,7 +32,6 @@ public class StatementsLine {
                         if (node instanceof Statement) {
                             // System.out.println(" [Lines " + node.getBegin() + " - " + node.getEnd() + " ] " + node);
 
-                            boolean find = false;
                             node.removeComment();
                             String fullBody = node.toString();
                             int begin = 0;
@@ -53,15 +52,13 @@ public class StatementsLine {
                                         lineNumber = node.getBegin().get().line + begin;
                                     } else {
                                         //System.out.println("no exists");
-                                        find = true;
+
                                         lineNumber = node.getBegin().get().line + begin;
 //                                        System.out.println(lineNumber + begin);
                                     }
                                     r = new Result(path, m.group(), lineNumber + 1);
                                     ar.add(r);
-
                                 }
-
 
                             }
 
@@ -71,7 +68,7 @@ public class StatementsLine {
                         }
                     }
                 }).explore(JavaParser.parse(file));
-                System.out.println(); // empty line
+                //System.out.println(); // empty line
             } catch (IOException e) {
                 new RuntimeException(e);
             }

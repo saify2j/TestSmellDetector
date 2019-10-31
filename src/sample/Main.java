@@ -11,8 +11,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Detect Resource Optimism");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setTitle("Detect Resource Optimism by saify2j");
+        primaryStage.setScene(new Scene(root, 620, 400));
         primaryStage.setResizable(false);
         primaryStage.show();
 
