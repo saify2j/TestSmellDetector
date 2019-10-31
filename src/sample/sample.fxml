@@ -23,12 +23,12 @@
 
     <Label GridPane.rowIndex="2" GridPane.columnIndex="1" style="-fx-font-size: 1.2em;-fx-text-fill: white" >Choose Project Folder</Label>
     <Button GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="iButton" onAction="#openFileChooser" >Select...</Button>
-    <TextField editable="false" styleClass="textField" fx:id="folderLoc" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="300"></TextField>
+    <TextField editable="false" styleClass="textField" fx:id="folderLoc" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="400"></TextField>
 
 
     <Button GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="i2Button" onAction="#testSmell" >Test</Button>
     <Label fx:id="detected" GridPane.columnIndex="2" GridPane.rowIndex="4" styleClass="label2"></Label>
-
+    <TextArea fx:id="result" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="2" prefWidth="400"></TextArea>
     <stylesheets>
         <URL value="@../demo.css" />
     </stylesheets>
